@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4nbcj2xsjrj5"]
+
+[ext_resource type="Texture2D" uid="uid://csstd5noexmuf" path="res://gfx/box.png" id="1_tvrxt"]
+
+[node name="Box" type="Node2D"]
+
+[node name="Box" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_tvrxt")

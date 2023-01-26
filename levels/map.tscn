@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://bvi77n2dmosie"]
+
+[ext_resource type="Texture2D" uid="uid://dtblbvp2via01" path="res://gfx/wall.png" id="1_86ohd"]
+[ext_resource type="PackedScene" uid="uid://7vqtlq52p37f" path="res://entities/player.tscn" id="2_1hsd6"]
+[ext_resource type="Script" path="res://levels/Map.cs" id="2_6ihrv"]
+[ext_resource type="PackedScene" uid="uid://d4nbcj2xsjrj5" path="res://entities/box.tscn" id="4_72sk5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jkv08"]
+texture = ExtResource("1_86ohd")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_t5n6n"]
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_jkv08")
+
+[node name="Map" type="TileMap"]
+tile_set = SubResource("TileSet_t5n6n")
+cell_quadrant_size = 128
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 196616, 0, 0, 131080, 0, 0, 65544, 0, 0, 8, 0, 0, 7, 0, 0, 6, 0, 0, 5, 0, 0, 4, 0, 0, 3, 0, 0, 2, 0, 0, 1, 0, 0, 262152, 0, 0, 327688, 0, 0, 393224, 0, 0, 458760, 0, 0, 524296, 0, 0, 589832, 0, 0, 655368, 0, 0, 720904, 0, 0, 786440, 0, 0, 786439, 0, 0, 786438, 0, 0, 786437, 0, 0, 786436, 0, 0, 720896, 0, 0, 655360, 0, 0, 589824, 0, 0, 524288, 0, 0, 458752, 0, 0, 393216, 0, 0, 327680, 0, 0, 786435, 0, 0, 786434, 0, 0, 786433, 0, 0, 786432, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 655364, 0, 0, 720899, 0, 0, 655363, 0, 0, 720900, 0, 0)
+script = ExtResource("2_6ihrv")
+
+[node name="Player" parent="." instance=ExtResource("2_1hsd6")]
+position = Vector2(224, 608)
+
+[node name="Cam" type="Camera2D" parent="Player"]
+ignore_rotation = false
+current = true
+zoom = Vector2(0.5, 0.5)
+process_callback = 0
+metadata/_edit_lock_ = true
+
+[node name="Box" parent="." instance=ExtResource("4_72sk5")]
+position = Vector2(288, 608)
